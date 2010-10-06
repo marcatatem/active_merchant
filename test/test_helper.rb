@@ -15,6 +15,11 @@ rescue LoadError
 end
 
 require 'action_controller'
+begin
+  require 'action_dispatch/testing/test_process'
+rescue LoadError
+  require 'action_controller/test_process'
+end
 require 'action_controller/test_process'
 require 'active_merchant/billing/integrations/action_view_helper'
 
